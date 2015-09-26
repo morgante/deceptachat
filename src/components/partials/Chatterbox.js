@@ -14,12 +14,12 @@ export default class Chatterbox extends Component {
 	};
 
 	componentWillMount() {
-		this.props.actions.connectServer();
+		// this.props.actions.connectServer();
 	}
 
 	render() {
 		const actions = this.props.actions;
-		const inbox = this.props.inbox.toJS();
+		const inbox = this.props.inbox;
 		const friends = inbox.friends;
 
 		var mainPanel = null;

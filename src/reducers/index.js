@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import counter from './counter';
+import inbox from './inbox';
 
 const rootReducer = combineReducers({
-	counter
+	counter,
+	inbox
 });
 
 export default rootReducer;
