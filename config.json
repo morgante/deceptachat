@@ -1,0 +1,20 @@
+{
+	"users": {
+		"morgante": {
+			"name": "Morgante Pell",
+			"mask": "andy"
+		},
+		"andy": {
+			"name": "Andy",
+			"mask": "andrea"
+		},
+		"andrea": {
+			"name": "Andrea",
+			"mask": "alex"
+		},
+		"alex": {
+			"name": "Alex",
+			"mask": "morgante"
+		}
+	}
+}
