@@ -23,12 +23,6 @@ class App extends Component {
 
     return (
         <div>
-          <div className={styles.header}>
-            <Link to="/">Home</Link>
-            { pathname }
-          </div>
-          <hr />
-          <hr />
           {children}
         </div>
     );

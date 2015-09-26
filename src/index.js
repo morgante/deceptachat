@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { Router, Route } from 'react-router';
 import configureStore from './store/configureStore';
 import App from './components/App';
+import ChatPage from './components/pages/ChatPage';
 import HomePage from './components/pages/HomePage';
 import CounterPage from './components/pages/CounterPage';
 
@@ -19,6 +20,7 @@ React.render(
 	        <Route path="/" component={HomePage} />
 	        <Route path="/counter" component={CounterPage} />
 	        <Route path="/home" component={HomePage} />
+          <Route path="/chat" component={ChatPage} />
         </Route>
       </Router>
     }
