@@ -28,6 +28,10 @@ module.exports = {
         loaders: ['style', 'css', 'sass']
       },
       {
+        test: /\.json$/,
+        loaders: ['json']
+      },
+      {
         test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
         loader: "url?limit=10000&minetype=application/font-woff"
       },

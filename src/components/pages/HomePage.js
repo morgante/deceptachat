@@ -2,6 +2,12 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { Button } from 'react-bootstrap';
+var _ = require("lodash");
+import { bindActionCreators } from 'redux';
+
+import { login } from '../../actions/MetaActions';
+import LoginList from '../partials/LoginList';
+import Chatterbox from '../partials/Chatterbox';
 
 class HomePage extends Component {
   constructor(props) {
@@ -9,8 +15,16 @@ class HomePage extends Component {
   }
 
   render() {
+    const users = this.props.meta.users;
+    const actions = bindActionCreators({login}, this.props.dispatch);
+    const doLogin = function(username) {
+      console.log("login...", username, this.context, this);
+      actions.login(username);
+    }
     return (
       <div>
+        <p>Please select your name.</p>
+        <LoginList users={users} login={doLogin.bind(this)} />
         <p>You are home!</p>
         <Link to="/chat">Chat</Link>
       </div>
@@ -23,6 +37,7 @@ HomePage.propTypes = {
 
 function mapStateToProps(state, ownProps) {
   return {
+    meta: state.meta
   };
 }
 
