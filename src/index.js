@@ -1,26 +1,24 @@
 import 'babel-core/polyfill';
 import React from 'react';
-import BrowserHistory from 'react-router/lib/BrowserHistory';
 import { Provider } from 'react-redux';
-import { Router, Route } from 'react-router';
+import { Router, Route, IndexRoute } from 'react-router';
 import configureStore from './store/configureStore';
 import App from './components/App';
 import ChatPage from './components/pages/ChatPage';
 import HomePage from './components/pages/HomePage';
 import CounterPage from './components/pages/CounterPage';
+import history from './router/history';
 
-const history = new BrowserHistory();
 const store = configureStore();
 
 React.render(
   <Provider store={store}>
     {() =>
       <Router history={history}>
-        <Route component={App}>
-	        <Route path="/" component={HomePage} />
-	        <Route path="/counter" component={CounterPage} />
-	        <Route path="/home" component={HomePage} />
-          <Route path="/chat" component={ChatPage} />
+        <Route path="/" component={App}>
+          <IndexRoute component={HomePage} />
+	        <Route path="home" component={HomePage} />
+          <Route path="chat" component={ChatPage} />
         </Route>
       </Router>
     }
