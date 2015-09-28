@@ -8,6 +8,11 @@ import WelcomeBar from './WelcomeBar';
 import ChatWindow from './ChatWindow';
 
 export default class Chatterbox extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {startTime: new Date()};
+	}
+
 	static propTypes = {
 		inbox: PropTypes.object.isRequired,
 		actions: PropTypes.object.isRequired,
@@ -32,11 +37,13 @@ export default class Chatterbox extends Component {
 
 		var mainPanel = null;
 
+		// console.log("time", this.state);
+
 		if (_.size(friends) > 0 && inbox.active_conversation) {
 			let friend = friends[inbox.active_conversation];
 			let messages = inbox.friends[inbox.active_conversation] || [];
 			mainPanel = (
-				<ChatWindow actions={actions} friend={friend} messages={messages} />
+				<ChatWindow startTime={this.state.startTime} actions={actions} friend={friend} messages={messages} />
 			);
 		}
 
@@ -44,7 +51,7 @@ export default class Chatterbox extends Component {
 			<div className="container-fluid">
 				<div className="row">
 					<div className="friend-panel side-panel col-sm-2 col-md-3">
-						<FriendList actions={actions} friends={friends} active={inbox.active_conversation} />
+						<FriendList startTime={this.state.startTime} actions={actions} friends={friends} active={inbox.active_conversation} />
 					</div>
 					<div className="main-panel col-sm-9 col-sm-offset-2 col-md-9 col-md-offset-3">
 						{mainPanel}
