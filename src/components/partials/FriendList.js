@@ -29,8 +29,6 @@ export default class FriendList extends Component {
 				<ul className="nav">
 					{friendList}
 				</ul>
-				
-				<AddFriend actions={actions} />
 			</div>
 		);
 	}
