@@ -12,11 +12,13 @@ class ChatPage extends Component {
   }
 
   render() {
-    const { inbox, dispatch } = this.props;
+    const { inbox, dispatch, meta } = this.props;
     const actions = bindActionCreators(ChatActions, dispatch);
 
+    const users = meta.users;
+
     return (
-      <Chatterbox inbox={inbox} actions={actions} />
+      <Chatterbox inbox={inbox} actions={actions} friends={users} />
     );
   }
 }
@@ -26,7 +28,8 @@ ChatPage.propTypes = {
 
 function mapStateToProps(state, ownProps) {
   return {
-    inbox: state.inbox.toJS()
+    inbox: state.inbox.toJS(),
+    meta: state.meta
   };
 }
 

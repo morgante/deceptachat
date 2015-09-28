@@ -4,7 +4,7 @@ var classNames = require('classnames');
 
 export default class Friend extends Component {
 	render() {
-		const {username} = this.props.friend;
+		const {username, name} = this.props.friend;
 
 		const clickHandler = this.props.actions.selectFriend.bind(null, username);
 
@@ -15,7 +15,7 @@ export default class Friend extends Component {
 		return (
 			<li className={classes}>
 				<a href="#" onClick={clickHandler}>
-					{username}
+					{name}
 				</a>
 			</li>
 		);

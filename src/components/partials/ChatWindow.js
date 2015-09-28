@@ -18,7 +18,7 @@ export default class ChatWindow extends Component {
 
 		const messages = friend.messages;
 
-		const heading = "Chat with " + friend.username;
+		const heading = "Chat with " + friend.name;
 
 		return (
 			<div>
