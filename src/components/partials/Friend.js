@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+var Blur = require('react-blur');
 
 var classNames = require('classnames');
 
@@ -14,10 +15,19 @@ export default class Friend extends Component {
 			"active": this.props.active
 		});
 
+		var pic = "craig.jpg";
+		var image = require("../../../images/pics/" + pic);
+
 		return (
 			<li className={classes}>
 				<a href="#" onClick={clickHandler}>
+					<div className="profile-pic">
+						<div className="image img-circle">
+							<Blur img={image} blurRadius={5} />
+						</div>
+					</div>
 					{name}
+					<div className="clearfix"></div>
 				</a>
 			</li>
 		);

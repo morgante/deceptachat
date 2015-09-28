@@ -22,7 +22,8 @@
 		},
 		"eduardo": {
 			"name": "eduardo",
-			"mask": "luis"
+			"mask": "luis",
+			"picture": "craig.jpg"
 		},
 		"luis": {
 			"name": "luis",
