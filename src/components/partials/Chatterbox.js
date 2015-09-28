@@ -23,12 +23,10 @@ export default class Chatterbox extends Component {
 		const inbox = this.props.inbox;
 		const friends = this.props.friends;
 
-		// console.log("")
-
 		var mainPanel = null;
 
 		if (_.size(friends) > 0 && inbox.active_conversation) {
-			let friend = friends[inbox.active_conversation];
+			let friend = inbox.friends[inbox.active_conversation];
 			mainPanel = (
 				<ChatWindow actions={actions} friend={friend} />
 			);
