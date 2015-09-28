@@ -7,10 +7,7 @@ function addFriend(state, username) {
 		return state;
 	}
 
-	state = state.setIn(["friends", username], Immutable.fromJS({
-		username: username,
-		messages: []
-	}));
+	state = state.setIn(["friends", username], Immutable.fromJS([]));
 
 	if (state.active_conversation === undefined) {
 		state = state.set("active_conversation", username);
@@ -20,7 +17,7 @@ function addFriend(state, username) {
 }
 
 function addMessage(state, friend, message) {
-	let keyPath = ["friends", friend, "messages"];
+	let keyPath = ["friends", friend];
 	state = state.setIn(keyPath, state.getIn(keyPath).push(message));
 
 	return state;
@@ -31,10 +28,8 @@ export default function inbox(state = Immutable.fromJS({friends: {}}), action) {
 		case Actions.ADD_FRIEND:
 			return addFriend(state, action.username);
 		case Actions.AUTHENTICATE:
-			state = state.set("username", action.username);
-			state = state.set("key", action.key);
-			return state;
 		case "LOG_IN":
+			console.log("authenticated", action, state);
 			state = state.set("username", action.username);
 			return state;
 		case Actions.SELECT_FRIEND:

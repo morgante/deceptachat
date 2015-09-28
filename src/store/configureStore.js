@@ -1,11 +1,15 @@
-import { createStore, applyMiddleware } from 'redux';
+import { compose, createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import loggerMiddleware from 'redux-logger';
 import rootReducer from '../reducers';
+import persistState from 'redux-localstorage';
 
-const createStoreWithMiddleware = applyMiddleware(
-  thunkMiddleware,
-  loggerMiddleware
+const createStoreWithMiddleware = compose(
+  applyMiddleware(
+    thunkMiddleware,
+    loggerMiddleware
+  ),
+  persistState(['meta'])
 )(createStore);
 
 export default function configureStore(initialState) {

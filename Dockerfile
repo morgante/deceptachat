@@ -30,7 +30,4 @@ RUN npm install -d
 # Copy source
 COPY . /usr/src/app/
 
-# Compile gulp
-RUN ./node_modules/.bin/gulp compile
-
 CMD gunicorn index:app -k flask_sockets.worker -b 0.0.0.0:8000

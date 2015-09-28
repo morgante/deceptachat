@@ -12,11 +12,9 @@ export default class ChatWindow extends Component {
 	};
 
 	render() {
-		const { friend, actions } = this.props;
+		const { friend, actions, messages } = this.props;
 
 		const sender = _.partial(actions.sendMessage, friend.username);
-
-		const messages = friend.messages;
 
 		const heading = "Chat with " + friend.name;
 

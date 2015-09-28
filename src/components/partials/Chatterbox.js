@@ -15,7 +15,7 @@ export default class Chatterbox extends Component {
 	};
 
 	componentWillMount() {
-		// this.props.actions.connectServer();
+		this.props.actions.connectServer();
 	}
 
 	render() {
@@ -26,9 +26,10 @@ export default class Chatterbox extends Component {
 		var mainPanel = null;
 
 		if (_.size(friends) > 0 && inbox.active_conversation) {
-			let friend = inbox.friends[inbox.active_conversation];
+			let friend = friends[inbox.active_conversation];
+			let messages = inbox.friends[inbox.active_conversation];
 			mainPanel = (
-				<ChatWindow actions={actions} friend={friend} />
+				<ChatWindow actions={actions} friend={friend} messages={messages} />
 			);
 		}
 
