@@ -37,7 +37,6 @@ App.propTypes = {
 };
 
 App.contextTypes = {
-  router: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {
