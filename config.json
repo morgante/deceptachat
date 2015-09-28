@@ -1,19 +1,31 @@
 {
 	"users": {
-		"morgante": {
-			"name": "Morgante Pell",
+		"joey": {
+			"name": "joey",
 			"mask": "andy"
 		},
-		"andy": {
-			"name": "Andy",
+		"tessa": {
+			"name": "tessa",
 			"mask": "andrea"
 		},
-		"andrea": {
-			"name": "Andrea",
+		"flavia": {
+			"name": "flavia",
 			"mask": "alex"
 		},
-		"alex": {
-			"name": "Alex",
+		"vivi": {
+			"name": "vivi",
+			"mask": "morgante"
+		},
+		"carlos": {
+			"name": "carlos",
+			"mask": "morgante"
+		},
+		"eduardo": {
+			"name": "eduardo",
+			"mask": "morgante"
+		},
+		"luis": {
+			"name": "luis",
 			"mask": "morgante"
 		}
 	}

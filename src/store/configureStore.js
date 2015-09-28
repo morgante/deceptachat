@@ -4,9 +4,12 @@ import loggerMiddleware from 'redux-logger';
 import rootReducer from '../reducers';
 import persistState from 'redux-localstorage';
 
+import apiMiddleware from '../api/middleware';
+
 const createStoreWithMiddleware = compose(
   applyMiddleware(
     thunkMiddleware,
+    apiMiddleware,
     loggerMiddleware
   ),
   persistState(['meta'])

@@ -26,12 +26,12 @@ box = Chatterbox(os.getenv("SECRET"), redis_uri=os.getenv("REDIS_PORT_6379_TCP")
 def index():
     return render_template("index.html")
 
-@app.route("/inbox/<username>/<key>")
-def inbox(username, key):
-    session = box.authenticate(username, key)
+@app.route("/inbox/<username>")
+def inbox(username):
+    session = box.authenticate(username)
 
     if session:
-        return render_template("chat.html", username=username, key=key)
+        return render_template("chat.html", username=username)
     else:
         return redirect(url_for("index"))
 
@@ -43,7 +43,7 @@ def join():
     registration = box.register_user(username)
 
     if registration:
-        return redirect(url_for("inbox", username=username, key=registration))
+        return redirect(url_for("inbox", username=username))
     else:
         return "Sorry, that username already exists."
 
@@ -57,7 +57,7 @@ def receive(socket):
         if not socket.closed:
             socket.send(message)
 
-    sender = box.open_inbox(auth.get("username"), auth.get("key"), handle)
+    sender = box.open_inbox(auth.get("username"), handle)
 
     while not socket.closed:
         message = socket.receive()

@@ -18,7 +18,7 @@ class ChatPage extends Component {
     const users = meta.users;
 
     return (
-      <Chatterbox inbox={inbox} actions={actions} friends={users} />
+      <Chatterbox user={meta.users[meta.username]} inbox={inbox} actions={actions} friends={users} />
     );
   }
 }

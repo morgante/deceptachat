@@ -45,6 +45,8 @@ export default function inbox(state = Immutable.fromJS({friends: {}}), action) {
 				id: action.id
 			});
 
+			console.log("send message", action, state.toJS());
+
 			return state;
 		case Actions.RECEIVE_MESSAGE:
 			const friend = (action.from === state.get("username")) ? action.to : action.from;

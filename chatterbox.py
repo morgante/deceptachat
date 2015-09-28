@@ -35,17 +35,14 @@ class Chatterbox(object):
         else:
             return False
 
-    def authenticate(self, username, key):
-        if self.__hash_username(username) == key:
-            return True
-        else:
-            return False
+    def authenticate(self, username):
+        return True
 
     def __grab_recent(self, username, count=100):
         return self.redis.lrange(self.__get_redis_list(username), -1 * count, -1)
 
-    def open_inbox(self, username, key, handler):
-        if self.__hash_username(username) == key:
+    def open_inbox(self, username, handler):
+        if True:
             def send(data):
                 if (data is not None):
                     info = json.loads(data)

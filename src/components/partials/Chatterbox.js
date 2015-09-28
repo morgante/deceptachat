@@ -27,7 +27,7 @@ export default class Chatterbox extends Component {
 
 		if (_.size(friends) > 0 && inbox.active_conversation) {
 			let friend = friends[inbox.active_conversation];
-			let messages = inbox.friends[inbox.active_conversation];
+			let messages = inbox.friends[inbox.active_conversation] || [];
 			mainPanel = (
 				<ChatWindow actions={actions} friend={friend} messages={messages} />
 			);

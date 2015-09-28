@@ -10,7 +10,7 @@ function SetupAPI(inbox, redux) {
 
 	var messages = {};
 
-	const socketUri = "ws://localhost:48380/ws/inbox";
+	const socketUri = "ws://" + location.host + "/ws/inbox";
 	var ws = new WebSocket(socketUri);
 
 	ws.onmessage = function(evt) {
