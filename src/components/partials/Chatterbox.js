@@ -21,7 +21,14 @@ export default class Chatterbox extends Component {
 	render() {
 		const actions = this.props.actions;
 		const inbox = this.props.inbox;
-		const friends = this.props.friends;
+		const user = this.props.user;
+		const friends = _(this.props.friends)
+			.filter((friend) => {
+				return friend.username !== user.username
+			})
+			.groupBy('username')
+			.mapValues((list) => list[0])
+			.value();
 
 		var mainPanel = null;
 

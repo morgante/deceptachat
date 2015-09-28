@@ -11,8 +11,7 @@ const createStoreWithMiddleware = compose(
     thunkMiddleware,
     apiMiddleware,
     loggerMiddleware
-  ),
-  persistState(['meta'])
+  )
 )(createStore);
 
 export default function configureStore(initialState) {
