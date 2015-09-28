@@ -2,32 +2,23 @@
 	"users": {
 		"joey": {
 			"name": "joey",
-			"mask": "tessa"
+			"mask": "tessa",
+			"display": "JJ"
 		},
 		"tessa": {
 			"name": "tessa",
-			"mask": "flavia"
+			"mask": "flavia",
+			"display": "Tessica"
 		},
 		"flavia": {
 			"name": "flavia",
-			"mask": "vivi"
+			"mask": "vivi",
+			"display": "FLA"
 		},
 		"vivi": {
 			"name": "vivi",
-			"mask": "carlos"
-		},
-		"carlos": {
-			"name": "carlos",
-			"mask": "eduardo"
-		},
-		"eduardo": {
-			"name": "eduardo",
-			"mask": "luis",
-			"picture": "craig.jpg"
-		},
-		"luis": {
-			"name": "luis",
-			"mask": "joey"
+			"mask": "joey",
+			"display": "V2"
 		}
 	}
 }

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 var _ = require("lodash");
 
-import FromMessage from "./FromMessage";
+import Message from "./Message";
 
 export default class Messages extends Component {
 	componentDidUpdate() {
@@ -11,6 +11,8 @@ export default class Messages extends Component {
 
 	render() {
 		var messages = this.props.messages;
+		var friend = this.props.friend;
+		var user = this.props.user;
 
 		messages = _.map(messages, message => {
 			return {
@@ -32,8 +34,10 @@ export default class Messages extends Component {
 		messages = messages.filter(message => message.messages.length > 0);
 
 		const messageList = messages.map(message => {
+			const me = message.from === user.username;
+			const from = (me) ? user : friend;
 			return (
-				<FromMessage from={message.from} messages={message.messages} />
+				<Message fromMe={me} from={from} messages={message.messages} />
 			);
 		});
 

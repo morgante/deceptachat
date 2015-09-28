@@ -37,13 +37,13 @@ export default class Chatterbox extends Component {
 
 		var mainPanel = null;
 
-		// console.log("time", this.state);
+		console.log("time", this.state, friends, inbox.active_conversation);
 
 		if (_.size(friends) > 0 && inbox.active_conversation) {
 			let friend = friends[inbox.active_conversation];
 			let messages = inbox.friends[inbox.active_conversation] || [];
 			mainPanel = (
-				<ChatWindow startTime={this.state.startTime} actions={actions} friend={friend} messages={messages} />
+				<ChatWindow user={user} startTime={this.state.startTime} actions={actions} friend={friend} messages={messages} />
 			);
 		}
 
