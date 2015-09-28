@@ -5,6 +5,7 @@ import { Button } from 'react-bootstrap';
 var _ = require("lodash");
 import { bindActionCreators } from 'redux';
 
+import history from '../../router/history';
 import { login } from '../../actions/MetaActions';
 import LoginList from '../partials/LoginList';
 import Chatterbox from '../partials/Chatterbox';
@@ -18,8 +19,8 @@ class HomePage extends Component {
     const users = this.props.meta.users;
     const actions = bindActionCreators({login}, this.props.dispatch);
     const doLogin = function(username) {
-      console.log("login...", username, this.context, this);
       actions.login(username);
+      history.pushState(null, '/chat');
     }
     return (
       <div>
