@@ -4,9 +4,10 @@ var config = require("../../config.json");
 
 const defaultState = {
 	username: null,
-	users: _.mapValues(config.users, (user, key) => {
+	users: _.mapValues(config.users, (user, key, obj) => {
 		return Object.assign({}, user, {
-			username: key
+			username: key,
+			fake: obj[user.mask]
 		});
 	})
 };

@@ -24,7 +24,7 @@ export default class Chatterbox extends Component {
 		const user = this.props.user;
 		const friends = _(this.props.friends)
 			.filter((friend) => {
-				return friend.username !== user.username
+				return friend.username !== user.username && friend.mask !== user.username;
 			})
 			.groupBy('username')
 			.mapValues((list) => list[0])

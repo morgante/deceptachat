@@ -4,7 +4,9 @@ var classNames = require('classnames');
 
 export default class Friend extends Component {
 	render() {
-		const {username, name} = this.props.friend;
+		const {username, fake} = this.props.friend;
+
+		const name = fake.name;
 
 		const clickHandler = this.props.actions.selectFriend.bind(null, username);
 
