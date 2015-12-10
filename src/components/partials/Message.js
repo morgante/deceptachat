@@ -8,6 +8,12 @@ export default class Message extends Component {
 		const messages = this.props.messages;
 		const fromMe = this.props.fromMe;
 
+		if (from === undefined) {
+			return (
+				<span></span>
+			);
+		}
+
 		console.log("from", from.fake);
 
 		const avatar = "https://github.com/identicons/" + from.fake.mask + ".png";

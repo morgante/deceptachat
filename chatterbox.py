@@ -49,14 +49,22 @@ class Chatterbox(object):
                     self.send_message(username, info.get("to"), info.get("contents"), info.get("id"))
 
             def receiver(data):
-                handler(data.get("data"))
+                info = json.loads(data.get("data"))
+                if (info.get("from") != username):
+                    handler(data.get("data"))
 
             for message in self.__grab_recent(username):
+                info = json.loads(message)
+                if (info.get("to") != "group"):
+                    handler(message)
+
+            for message in self.__grab_recent("group"):
                 handler(message)
 
             pubsub = self.redis.pubsub()
             pubsub.subscribe(**{
-                "" + self.__get_redis_channel(username): receiver
+                "" + self.__get_redis_channel(username): receiver,
+                "" + self.__get_redis_channel("group"): receiver
             })
             pubsub.run_in_thread(sleep_time=0.001)
 

@@ -27,7 +27,7 @@ export default class Chatterbox extends Component {
 		const actions = this.props.actions;
 		const inbox = this.props.inbox;
 		const user = this.props.user;
-		const friends = _(this.props.friends)
+		var friends = _(this.props.friends)
 			.filter((friend) => {
 				return friend.username !== user.username && friend.mask !== user.username;
 			})
@@ -35,15 +35,25 @@ export default class Chatterbox extends Component {
 			.mapValues((list) => list[0])
 			.value();
 
+		var group = {
+			"username": "group",
+			"name": "Group",
+			"mask": "group",
+			"display": "Group Chat"
+		};
+		group.fake = group;
+
+		friends.group = group;
+
 		var mainPanel = null;
 
-		console.log("time", this.state, friends, inbox.active_conversation);
+		console.log("friends", friends, inbox);
 
-		if (_.size(friends) > 0 && inbox.active_conversation) {
+		if (_.size(friends) > 0 && inbox.active_conversation && friends[inbox.active_conversation] !== undefined) {
 			let friend = friends[inbox.active_conversation];
 			let messages = inbox.friends[inbox.active_conversation] || [];
 			mainPanel = (
-				<ChatWindow user={user} startTime={this.state.startTime} actions={actions} friend={friend} messages={messages} />
+				<ChatWindow user={user} startTime={this.state.startTime} actions={actions} friend={friend} friends={friends} messages={messages} />
 			);
 		}
 

@@ -12,6 +12,7 @@ export default class Messages extends Component {
 	render() {
 		var messages = this.props.messages;
 		var friend = this.props.friend;
+		var friends = this.props.friends;
 		var user = this.props.user;
 
 		messages = _.map(messages, message => {
@@ -35,7 +36,7 @@ export default class Messages extends Component {
 
 		const messageList = messages.map(message => {
 			const me = message.from === user.username;
-			const from = (me) ? user : friend;
+			const from = (me) ? user : friends[message.from];
 			return (
 				<Message fromMe={me} from={from} messages={message.messages} />
 			);

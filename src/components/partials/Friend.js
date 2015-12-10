@@ -44,7 +44,7 @@ export default class Friend extends Component {
 		}
 
 		var styles = {
-			"-webkit-filter": "blur(" + blur + "px)"
+			"WebkitFilter": "blur(" + blur + "px)"
 		};
 
 		// if (seconds >= 60 && seconds <= 600) {
@@ -53,7 +53,7 @@ export default class Friend extends Component {
 
 		// console.log("tick tock goes the clock", this.state, this.props, blur);
 
-		var pic = "craig.jpg";
+		var pic = fake.name + ".jpg";
 		var image = require("../../../images/pics/" + pic);
 
 		return (

@@ -15,6 +15,8 @@ class ChatPage extends Component {
     const { inbox, dispatch, meta } = this.props;
     const actions = bindActionCreators(ChatActions, dispatch);
 
+    console.log("meta", meta.username, meta);
+
     const users = meta.users;
 
     return (

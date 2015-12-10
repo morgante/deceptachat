@@ -1,24 +1,69 @@
 {
 	"users": {
-		"joey": {
-			"name": "joey",
-			"mask": "tessa",
-			"display": "JJ"
+		"Andrew Callender": {
+			"name": "Andrew Callender",
+			"mask": "Daniel Carelli",
+			"display": "soccer mom"
 		},
-		"tessa": {
-			"name": "tessa",
-			"mask": "flavia",
-			"display": "Tessica"
+		"Daniel Carelli": {
+			"name": "Daniel Carelli",
+			"mask": "Daniel Mountcastle",
+			"display": "t swift lvr"
 		},
-		"flavia": {
-			"name": "flavia",
-			"mask": "vivi",
-			"display": "FLA"
+		"Daniel Mountcastle": {
+			"name": "Daniel Mountcastle",
+			"mask": "Dirichi Ike-njoku",
+			"display": "wrecking ball-er"
 		},
-		"vivi": {
-			"name": "vivi",
-			"mask": "joey",
-			"display": "V2"
+		"Dirichi Ike-njoku": {
+			"name": "Dirichi Ike-njoku",
+			"mask": "Jihyun Kim",
+			"display": "good guy craig"
+		},
+		"Jihyun Kim": {
+			"name": "Jihyun Kim",
+			"mask": "Joe Jean",
+			"display": "princess of saadiyat"
+		},
+		"Joe Jean": {
+			"name": "Joe Jean",
+			"mask": "Mohamed Amine Belarbi",
+			"display": "pikachu"
+		},
+		"Mohamed Amine Belarbi": {
+			"name": "Mohamed Amine Belarbi",
+			"mask": "Paula Dozsa",
+			"display": "ror troll"
+		},
+		"Paula Dozsa": {
+			"name": "Paula Dozsa",
+			"mask": "Valentin Benoit",
+			"display": "always swipes right"
+		},
+		"Valentin Benoit": {
+			"name": "Valentin Benoit",
+			"mask": "Yufei Gu",
+			"display": "one directioner"
+		},
+		"Yufei Gu": {
+			"name": "Yufei Gu",
+			"mask": "Craig Protzel",
+			"display": "marhaba couple"
+		},
+		"Craig Protzel": {
+			"name": "Craig Protzel",
+			"mask": "Ameed Abualteen",
+			"display": "twer-king"
+		},
+		"Ameed Abualteen": {
+			"name": "Ameed Abualteen",
+			"mask": "Andrew Callender",
+			"display": "belieber"
+		},
+		"Morgante Pell": {
+			"name": "Morgante Pell",
+			"mask": "Morgante Pell",
+			"display": "motown"
 		}
 	}
 }

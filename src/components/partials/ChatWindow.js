@@ -11,7 +11,7 @@ export default class ChatWindow extends Component {
 	};
 
 	render() {
-		const { friend, actions, messages, user } = this.props;
+		const { friend, friends, actions, messages, user } = this.props;
 
 		console.log("friend", friend);
 
@@ -23,7 +23,7 @@ export default class ChatWindow extends Component {
 			<div>
 				<ContextBar text={heading} />
 
-				<Messages messages={messages} friend={friend} user={user} />
+				<Messages messages={messages} friends={friends} friend={friend} user={user} />
 
 				<SendMessage onSend={sender} username={friend.username} />
 			</div>

@@ -49,7 +49,11 @@ export default function inbox(state = Immutable.fromJS({friends: {}}), action) {
 
 			return state;
 		case Actions.RECEIVE_MESSAGE:
-			const friend = (action.from === state.get("username")) ? action.to : action.from;
+			var friend = (action.from === state.get("username")) ? action.to : action.from;
+
+			if (action.to === "group") {
+				friend = "group";
+			}
 
 			state = addFriend(state, friend);
 
